@@ -306,6 +306,7 @@ public abstract class MediaEncoder implements Runnable {
                 // unexpected status
                 Log.w(TAG, "drain:unexpected result from encoder#dequeueOutputBuffer: " + encoderStatus);
             } else {
+                // video buffer generated:
                 final ByteBuffer encodedData = mediaCodec.getOutputBuffer(encoderStatus);
                 if (encodedData == null) {
                     // this never should come...may be a MediaCodec internal error
